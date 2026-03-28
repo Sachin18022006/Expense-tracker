@@ -82,7 +82,7 @@ function Analytics({ month, setMonth }) {
 
       <div className="main-content">
 
-        <h2>📊 Analytics Overview</h2>
+        <h2 class="head">📊 Analytics Overview</h2>
 
         {/* SUMMARY */}
         <div className="summary-cards">
