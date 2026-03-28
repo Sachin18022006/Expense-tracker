@@ -929,7 +929,7 @@ select, input[type="date"] {
 /* Floating arrow button */
 .floating-toggle {
   position: fixed;
-  top: -5px;
+  top: -10px;
   left: 10px;
   z-index: 1000;
   background: #6366f1;
