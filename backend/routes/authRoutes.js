@@ -32,20 +32,28 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const bcrypt = require("bcryptjs");
+    // ✅ FIND USER FIRST (YOU MISSED THIS)
+    const user = await User.findOne({ email });
 
-const isMatch = await bcrypt.compare(password, user.password);
+    if (!user) {
+      return res.status(400).json("Invalid credentials");
+    }
 
-if (!isMatch) {
-  return res.status(400).json("Invalid credentials");
-}
+    // ✅ COMPARE PASSWORD
+    const isMatch = await bcrypt.compare(password, user.password);
 
-    const match = await bcrypt.compare(password, user.password);
-    if (!match) return res.status(400).json("Invalid credentials");
+    if (!isMatch) {
+      return res.status(400).json("Invalid credentials");
+    }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    // ✅ GENERATE TOKEN
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET
+    );
 
     res.json({ token });
+
   } catch (err) {
     res.status(500).json(err.message);
   }
