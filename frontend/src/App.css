@@ -195,7 +195,7 @@ body {
 .sidebar {
   width: 200px;
   height: 100vh;
-  background: #111827;
+  background: linear-gradient(180deg, #1e3a8a, #0f172a);
   color: white;
   padding: 20px;
 }
