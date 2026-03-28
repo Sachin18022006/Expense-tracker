@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Home, BarChart2, LogOut } from "lucide-react";
 
-function Sidebar({ onLogout, month, setMonth  }) {
+function Sidebar({ onLogout, month, setMonth, exportCSV }) {
   const location = useLocation();
 
   return (
@@ -49,6 +49,12 @@ function Sidebar({ onLogout, month, setMonth  }) {
           </select>
         </div>
       </nav>
+
+      <div className="sidebar-actions">
+        <button className="export-btn" onClick={exportCSV}>
+          📥 Export CSV
+        </button>
+      </div>
 
       {/* Logout at bottom */}
       <button className="logout" onClick={onLogout}>

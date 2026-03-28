@@ -98,6 +98,7 @@ function Dashboard() {
         <Sidebar
           month={month}
           setMonth={setMonth}
+          exportCSV={exportCSV}
           onLogout={() => {
             localStorage.removeItem("token");
             window.location = "/";

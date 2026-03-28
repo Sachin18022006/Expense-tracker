@@ -983,3 +983,22 @@ select, input[type="date"] {
   color: white;
   font-size: 16px;
 }
+
+.sidebar-actions {
+  margin-top: 20px;
+}
+
+.export-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.export-btn:hover {
+  background: #16a34a;
+}
