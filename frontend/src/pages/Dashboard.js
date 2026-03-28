@@ -21,7 +21,7 @@ function Dashboard() {
   // 🔹 Fetch
   useEffect(() => {
     fetchExpenses();
-  }, []);
+  }, [token]);
 
   const fetchExpenses = async () => {
     const res = await axios.get("http://expense-tracker-k4ya.onrender.com/api/expenses", {

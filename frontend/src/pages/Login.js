@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "../App.css";
 
 function Login() {
-  const [data, setData] = useState({ email: "", password: "" });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);

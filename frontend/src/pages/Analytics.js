@@ -24,7 +24,7 @@ function Analytics({ month, setMonth}) {
       setExpenses(res.data);
     };
     fetch();
-  }, []);
+  }, [token]);
 
   // 🔥 SAFE FILTER (FIXED)
 const filteredExpenses =
