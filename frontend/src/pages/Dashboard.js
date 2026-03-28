@@ -21,7 +21,7 @@ function Dashboard() {
   // 🔹 Fetch
   useEffect(() => {
     fetchExpenses();
-    
+      // eslint-disable-next-line
   }, [token]);
 
   const fetchExpenses = async () => {
