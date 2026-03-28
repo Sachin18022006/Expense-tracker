@@ -12,7 +12,7 @@ function Register() {
   const handleRegister = async () => {
     try {
       await axios.post(
-        "http://expense-tracker-k4ya.onrender.com/api/auth/register",
+        "https://expense-tracker-k4ya.onrender.com/api/auth/register",
         data
       );
       alert("Registered successfully");
