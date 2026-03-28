@@ -188,6 +188,7 @@ body {
 /* Layout */
 .dashboard-layout {
   display: flex;
+  background: linear-gradient(180deg, #1e3a8a, #0f172a);
 }
 
 /* Sidebar */
