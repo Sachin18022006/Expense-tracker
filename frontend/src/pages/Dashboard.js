@@ -21,6 +21,7 @@ function Dashboard() {
   // 🔹 Fetch
   useEffect(() => {
     fetchExpenses();
+    
   }, [token]);
 
   const fetchExpenses = async () => {
