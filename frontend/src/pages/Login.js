@@ -14,56 +14,56 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-  try {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const res = await axios.post("https://expense-tracker-k4ya.onrender.com/api/auth/login", {
-      email,
-      password
-    });
+      const res = await axios.post(
+        "https://expense-tracker-k4ya.onrender.com/api/auth/login",
+        { email, password }
+      );
 
-    localStorage.setItem("token", res.data.token);
-    navigate("/dashboard");
+      localStorage.setItem("token", res.data.token);
+      navigate("/dashboard");
 
-  } catch (err) {
-    toast.error("Invalid credentials ");
-  } finally {
-    setLoading(false);
-  }
-};
+    } catch (err) {
+      toast.error("Invalid credentials");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-  <div className="login-container">
+    <div className="login-container">
 
-    {/* Background blobs */}
-    <div className="blob blob1"></div>
-    <div className="blob blob2"></div>
+      {/* Background */}
+      <div className="blob blob1"></div>
+      <div className="blob blob2"></div>
 
-    {/* LEFT */}
-    <div className="login-left">
-      <h1 className="brand-highlight">
-        Smart Expenses Tracker  
-        <img 
-          src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png" 
-          alt="money"
-          className="money-img"
+      {/* LEFT */}
+      <div className="login-left">
+        <h1 className="brand-highlight">
+          Smart Expenses Tracker
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png"
+            alt="money"
+            className="money-img"
+          />
+        </h1>
+        <p>Track • Save • Grow your money 💰</p>
+      </div>
+
+      {/* RIGHT */}
+      <div className="login-card">
+
+        <h2>Welcome Back 👋</h2>
+
+        <input
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-      </h1>
-      <p>Track • Save • Grow your money 💰</p>
-    </div>
 
-    {/* RIGHT CARD */}
-    <div className="login-card">
-
-      <h2>Welcome Back 👋</h2>
-
-      <input
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <div className="password-box">
+        <div className="password-box">
           <input
             type={show ? "text" : "password"}
             placeholder="Password"
@@ -75,23 +75,24 @@ function Login() {
           </span>
         </div>
 
-      <p className="forgot" onClick={() => navigate("/forgot")}>
-        Forgot Password?
-      </p>
+        <p className="forgot" onClick={() => navigate("/forgot")}>
+          Forgot Password?
+        </p>
 
-      <button onClick={handleLogin}>
-        {loading ? "Logging in..." : "Login"}
-      </button>
+        <button onClick={handleLogin}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
 
-      <p className="link">
-        Don’t have an account?{" "}
-        <span onClick={() => navigate("/register")}>Register</span>
-      </p>
+        <p className="link">
+          Don’t have an account?{" "}
+          <span onClick={() => navigate("/register")}>
+            Register
+          </span>
+        </p>
 
+      </div>
     </div>
-
-  </div>
-);
+  );
 }
 
 export default Login;

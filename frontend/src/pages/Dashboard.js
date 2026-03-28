@@ -8,6 +8,7 @@ function Dashboard() {
   const [expenses, setExpenses] = useState([]);
   const [month, setMonth] = useState("all");
   const [open, setOpen] = useState(true);
+
   const [form, setForm] = useState({
     title: "",
     amount: "",
@@ -21,45 +22,64 @@ function Dashboard() {
   // 🔹 Fetch
   useEffect(() => {
     fetchExpenses();
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [token]);
 
   const fetchExpenses = async () => {
-    const res = await axios.get("http://expense-tracker-k4ya.onrender.com/api/expenses", {
-      headers: { Authorization: token },
-    });
+    const res = await axios.get(
+      "https://expense-tracker-k4ya.onrender.com/api/expenses",
+      {
+        headers: { Authorization: token },
+      }
+    );
     setExpenses(res.data);
   };
 
   // 🔹 Add
   const addExpense = async () => {
-    await axios.post("http://expense-tracker-k4ya.onrender.com/api/expenses", form, {
-      headers: { Authorization: token },
+    await axios.post(
+      "https://expense-tracker-k4ya.onrender.com/api/expenses",
+      form,
+      {
+        headers: { Authorization: token },
+      }
+    );
+
+    setForm({
+      title: "",
+      amount: "",
+      category: "",
+      type: "expense",
+      date: "",
     });
-    setForm({ title: "", amount: "", category: "", type: "expense" ,date: ""});
+
     fetchExpenses();
   };
 
   // 🔹 Delete
   const deleteExpense = async (id) => {
-    await axios.delete(`http://expense-tracker-k4ya.onrender.com/api/expenses/${id}`, {
-      headers: { Authorization: token },
-    });
+    await axios.delete(
+      `https://expense-tracker-k4ya.onrender.com/api/expenses/${id}`,
+      {
+        headers: { Authorization: token },
+      }
+    );
     fetchExpenses();
   };
 
+  // 🔹 Filter
   const filteredExpenses =
-  month === "all"
-    ? expenses
-    : expenses.filter((e) => {
-        if (!e.date) return false;
+    month === "all"
+      ? expenses
+      : expenses.filter((e) => {
+          if (!e.date) return false;
 
-        const d = new Date(e.date);
+          const d = new Date(e.date);
+          if (isNaN(d)) return false;
 
-        if (isNaN(d)) return false; // 🔥 invalid date fix
+          return d.getMonth() === parseInt(month);
+        });
 
-        return d.getMonth() === parseInt(month);
-      });
   // 🔹 Calculations
   const income = expenses
     .filter((e) => e.type === "income")
@@ -76,8 +96,8 @@ function Dashboard() {
 
       {open && (
         <Sidebar
-        month={month} 
-        setMonth={setMonth}
+          month={month}
+          setMonth={setMonth}
           onLogout={() => {
             localStorage.removeItem("token");
             window.location = "/";
@@ -86,13 +106,14 @@ function Dashboard() {
       )}
 
       <div className={open ? "main-content" : "main-content full"}>
-        <button 
-            className="floating-toggle" 
-            onClick={() => setOpen(!open)}
-          >
-            {open ? "⬅" : "➡"}
-          </button>
-        
+
+        <button
+          className="floating-toggle"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "⬅" : "➡"}
+        </button>
+
         <h2>Track • Save • Grow your money 💰</h2>
 
         {/* SUMMARY */}
@@ -104,51 +125,64 @@ function Dashboard() {
 
         {/* FORM */}
         <div className="form">
+
           <input
             placeholder="Title"
             value={form.title}
-            onChange={(e) => setForm({ ...form, title: e.target.value })}
+            onChange={(e) =>
+              setForm({ ...form, title: e.target.value })
+            }
           />
 
           <input
             placeholder="Amount"
             value={form.amount}
-            onChange={(e) => setForm({ ...form, amount: e.target.value })}
+            onChange={(e) =>
+              setForm({ ...form, amount: e.target.value })
+            }
           />
 
           <input
             type="date"
             value={form.date}
-            onChange={(e) => setForm({ ...form, date: e.target.value })}
+            onChange={(e) =>
+              setForm({ ...form, date: e.target.value })
+            }
           />
 
           <select
             value={form.type}
-            onChange={(e) => setForm({ ...form, type: e.target.value })}
+            onChange={(e) =>
+              setForm({ ...form, type: e.target.value })
+            }
           >
             <option value="expense">Expense</option>
             <option value="income">Income</option>
           </select>
 
           <select
-              value={form.category}
-              onChange={(e) => setForm({ ...form, category: e.target.value })}
-            >
-              <option value="">Select Category</option>
-              <option value="Food">Food</option>
-              <option value="Transport">Transport</option>
-              <option value="Shopping">Shopping</option>
-              <option value="Bills">Bills</option>
-              <option value="Entertainment">Entertainment</option>
-              <option value="Health">Health</option>
-              <option value="Income">Personal Income</option>
+            value={form.category}
+            onChange={(e) =>
+              setForm({ ...form, category: e.target.value })
+            }
+          >
+            <option value="">Select Category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Health">Health</option>
+            <option value="Income">Personal Income</option>
           </select>
+
           <button onClick={addExpense}>Add</button>
         </div>
 
         {/* LIST */}
         {filteredExpenses.map((e) => (
           <div className="expense-card" key={e._id}>
+
             <div>
               <h4>{e.title}</h4>
               <p>{e.category}</p>
@@ -159,17 +193,20 @@ function Dashboard() {
 
             <div className="right">
               ₹{e.amount}
-              <button className="delete-btn" onClick={() => deleteExpense(e._id)}>
+              <button
+                className="delete-btn"
+                onClick={() => deleteExpense(e._id)}
+              >
                 <Trash2 size={18} />
               </button>
             </div>
+
           </div>
         ))}
+
       </div>
     </div>
   );
 }
-
-
 
 export default Dashboard;

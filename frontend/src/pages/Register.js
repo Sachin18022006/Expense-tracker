@@ -15,8 +15,10 @@ function Register() {
         "https://expense-tracker-k4ya.onrender.com/api/auth/register",
         data
       );
+
       alert("Registered successfully");
       window.location = "/";
+
     } catch (err) {
       alert(err.response?.data || "Error");
     }
@@ -25,26 +27,35 @@ function Register() {
   return (
     <div className="auth-container">
       <div className="auth-box">
+
         <h2>Register</h2>
 
         <input
           placeholder="Name"
-          onChange={(e) => setData({ ...data, name: e.target.value })}
+          onChange={(e) =>
+            setData({ ...data, name: e.target.value })
+          }
         />
 
         <input
           type="email"
           placeholder="Email"
-          onChange={(e) => setData({ ...data, email: e.target.value })}
+          onChange={(e) =>
+            setData({ ...data, email: e.target.value })
+          }
         />
 
         <input
           type="password"
           placeholder="Password"
-          onChange={(e) => setData({ ...data, password: e.target.value })}
+          onChange={(e) =>
+            setData({ ...data, password: e.target.value })
+          }
         />
 
-        <button onClick={handleRegister}>Register</button>
+        <button onClick={handleRegister}>
+          Register
+        </button>
 
         <p>
           Already have an account?{" "}
@@ -52,6 +63,7 @@ function Register() {
             Login
           </span>
         </p>
+
       </div>
     </div>
   );

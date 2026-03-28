@@ -4,14 +4,16 @@ import axios from "axios";
 import "../App.css";
 
 function ResetPassword() {
-  const { token } = useParams();   // 🔑 get token from URL
+  const { token } = useParams();
   const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const API = "https://expense-tracker-k4ya.onrender.com";
+
   const handleReset = async () => {
-    if (!password) {
+    if (!password.trim()) {
       alert("Please enter new password");
       return;
     }
@@ -20,17 +22,15 @@ function ResetPassword() {
       setLoading(true);
 
       await axios.post(
-        `http://expense-tracker-k4ya.onrender.com/api/auth/reset-password/${token}`,
+        `${API}/api/auth/reset-password/${token}`,
         { password }
       );
 
-      alert("✅ Password updated successfully");
-
-      // redirect to login
+      alert("Password updated successfully");
       navigate("/");
 
     } catch (err) {
-      alert(err.response?.data || "❌ Error resetting password");
+      alert(err.response?.data || "Error resetting password");
     } finally {
       setLoading(false);
     }
@@ -54,10 +54,7 @@ function ResetPassword() {
           {loading ? "Updating..." : "Reset Password"}
         </button>
 
-        <p
-          className="link"
-          onClick={() => navigate("/")}
-        >
+        <p className="link" onClick={() => navigate("/")}>
           ← Back to Login
         </p>
 
