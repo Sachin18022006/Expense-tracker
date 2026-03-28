@@ -20,7 +20,7 @@ function ResetPassword() {
       setLoading(true);
 
       const res = await axios.post(
-        `http://localhost:5000/api/auth/reset-password/${token}`,
+        `http://expense-tracker-k4ya.onrender.com/api/auth/reset-password/${token}`,
         { password }
       );
 

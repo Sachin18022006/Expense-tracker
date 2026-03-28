@@ -7,7 +7,7 @@ function ForgotPassword() {
 
   const handleSubmit = async () => {
     const res = await axios.post(
-      "http://localhost:5000/api/auth/forgot-password",
+      "http://expense-tracker-k4ya.onrender.com/api/auth/forgot-password",
       { email }
     );
 

@@ -18,7 +18,7 @@ function Analytics({ month, setMonth}) {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("http://localhost:5000/api/expenses", {
+      const res = await axios.get("http://expense-tracker-k4ya.onrender.com/api/expenses", {
         headers: { Authorization: token }
       });
       setExpenses(res.data);
@@ -110,7 +110,7 @@ console.log("DATA:", data);
       <div className="chart-card">
         <h3>Category Comparison</h3>
         <BarChart width={600} height={300} data={data}>
-          <XAxis dataKey="name"
+          <XAxis dataKey="name" 
           interval={0} 
           angle={-10}
           textAnchor="end" />

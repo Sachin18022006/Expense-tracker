@@ -24,7 +24,7 @@ function Dashboard() {
   }, []);
 
   const fetchExpenses = async () => {
-    const res = await axios.get("http://localhost:5000/api/expenses", {
+    const res = await axios.get("http://expense-tracker-k4ya.onrender.com/api/expenses", {
       headers: { Authorization: token },
     });
     setExpenses(res.data);
@@ -32,7 +32,7 @@ function Dashboard() {
 
   // 🔹 Add
   const addExpense = async () => {
-    await axios.post("http://localhost:5000/api/expenses", form, {
+    await axios.post("http://expense-tracker-k4ya.onrender.com/api/expenses", form, {
       headers: { Authorization: token },
     });
     setForm({ title: "", amount: "", category: "", type: "expense" ,date: ""});
@@ -41,7 +41,7 @@ function Dashboard() {
 
   // 🔹 Delete
   const deleteExpense = async (id) => {
-    await axios.delete(`http://localhost:5000/api/expenses/${id}`, {
+    await axios.delete(`http://expense-tracker-k4ya.onrender.com/api/expenses/${id}`, {
       headers: { Authorization: token },
     });
     fetchExpenses();
