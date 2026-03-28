@@ -831,7 +831,7 @@ select, input[type="date"] {
   color: white;
 }
 .main-content {
-  background: #f8fafc;
+  background: linear-gradient(180deg, #1e3a8a, #0f172a);
   padding: 20px;
 }
 
