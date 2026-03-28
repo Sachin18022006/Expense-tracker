@@ -89,7 +89,32 @@ function Dashboard() {
     .filter((e) => e.type === "expense")
     .reduce((a, b) => a + Number(b.amount), 0);
 
-  const balance = income - expense;
+  const balance = income - expense; 
+
+  const exportCSV = () => {
+  const headers = ["Title", "Amount", "Category", "Type", "Date"];
+
+  const rows = filteredExpenses.map((e) => [
+    e.title,
+    e.amount,
+    e.category,
+    e.type,
+    new Date(e.date).toLocaleDateString(),
+  ]);
+
+  let csvContent =
+    "data:text/csv;charset=utf-8," +
+    [headers, ...rows].map((row) => row.join(",")).join("\n");
+
+  const encodedUri = encodeURI(csvContent);
+
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", "expenses.csv");
+  document.body.appendChild(link);
+
+  link.click();
+};
 
   return (
     <div className="dashboard-layout">
