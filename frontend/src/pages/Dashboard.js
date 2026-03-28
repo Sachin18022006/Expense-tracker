@@ -140,7 +140,7 @@ function Dashboard() {
           {open ? "⬅" : "➡"}
         </button>
 
-        <h2>Track • Save • Grow your money 💰</h2>
+        <h2 class="head">Track • Save • Grow your money 💰</h2>
 
         {/* SUMMARY */}
         <div className="summary-cards">

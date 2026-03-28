@@ -1003,3 +1003,6 @@ select, input[type="date"] {
 .export-btn:hover {
   background: #16a34a;
 }
+.head{
+  color:white;
+}
