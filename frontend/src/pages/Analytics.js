@@ -12,7 +12,6 @@ const COLORS = ["#6366f1", "#22c55e", "#f59e0b", "#ef4444"];
 
 function Analytics({ month, setMonth }) {
   const [expenses, setExpenses] = useState([]);
-  const [open, setOpen] = useState(true);
 
   const token = localStorage.getItem("token");
 
