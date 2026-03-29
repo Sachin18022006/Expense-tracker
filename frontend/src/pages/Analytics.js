@@ -72,7 +72,7 @@ function Analytics({ month, setMonth }) {
   return (
     <div className="dashboard-layout">
 
-      {open && (
+       (
           <Sidebar
             month={month}
             setMonth={setMonth}
@@ -81,14 +81,7 @@ function Analytics({ month, setMonth }) {
               window.location = "/";
             }}
           />
-      )}
-
-      <div className={open ? "main-content" : "main-content full"}>
-
-        <button className="floating-toggle" onClick={() => setOpen(!open)}>
-          {open ? "⬅" : "➡"}
-        </button>
-
+      )
       <div className="main-content">
 
         <h2 class="head">📊 Analytics Overview</h2>
@@ -163,7 +156,7 @@ function Analytics({ month, setMonth }) {
 
       </div>
     </div>
-    </div>
+    
   );
 }
 
