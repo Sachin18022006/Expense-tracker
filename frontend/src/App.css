@@ -81,6 +81,7 @@ body {
 .login-left h1 {
   font-size: 45px;
   font-weight: bold;
+  margin-right:10px;
 }
 
 .login-left p {
