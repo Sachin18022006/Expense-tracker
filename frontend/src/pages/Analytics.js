@@ -71,7 +71,6 @@ function Analytics({ month, setMonth }) {
   return (
     <div className="dashboard-layout">
 
-       (
           <Sidebar
             month={month}
             setMonth={setMonth}
@@ -80,7 +79,6 @@ function Analytics({ month, setMonth }) {
               window.location = "/";
             }}
           />
-      )
       <div className="main-content">
 
         <h2 class="head">📊 Analytics Overview</h2>
