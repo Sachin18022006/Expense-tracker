@@ -165,7 +165,7 @@ body {
 .sidebar {
   width: 220px;
   height: 100vh;
-   background-color: rgb(11, 11, 63);
+   background-color: rgb(2, 2, 41);
   color: white;
   padding: 20px;
   display: flex;
@@ -176,6 +176,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top:20px;
 }
 
 .sidebar a {
@@ -294,7 +295,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-   background-color: rgb(11, 11, 63);
+  background-color: rgb(11, 11, 63);
 }
 
 .chart-card {
@@ -331,5 +332,4 @@ body {
 /* ===================== TEXT ===================== */
 .head {
   color: white;
-  margin-top: 35px;
 }
