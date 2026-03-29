@@ -22,27 +22,33 @@ Deployment: Vercel (Frontend), Render (Backend)
 - Clean, responsive, and user-friendly UI
 
 ⚙️ Setup Instructions:
+
 Clone the repository:
 git clone https://github.com/Sachin18022006/Expense-tracker.git
 cd Expense-tracker
 
 Backend setup:
+
 cd backend,
 npm install
 
 Create a .env file in backend folder and add:
+
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
 Run backend:
+
 npm start
 
 Frontend setup:
+
 cd frontend,
 npm install,
 npm start
 
 📌 API Endpoints:
+
 Auth Routes:
 
 POST /api/auth/register  
