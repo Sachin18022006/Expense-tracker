@@ -57,7 +57,7 @@ function Register() {
           Register
         </button>
 
-        <p>
+        <p className="ptext">
           Already have an account?{" "}
           <span onClick={() => (window.location = "/")}>
             Login
