@@ -317,16 +317,27 @@ body {
 }
 
 /* ===================== FLOAT BUTTON ===================== */
+/* Toggle button inside sidebar edge */
 .floating-toggle {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 50%;
+  left: 220px; /* same as sidebar width */
+  transform: translateY(-50%);
+  
   background: #6366f1;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 10px 12px;
   border-radius: 50%;
   cursor: pointer;
+  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* When sidebar is closed */
+.main-content.full .floating-toggle {
+  left: 10px;
 }
 
 /* ===================== TEXT ===================== */
