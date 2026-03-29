@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  PieChart, Pie, Tooltip, Cell,
+  PieChart, Pie, Tooltip, 
   BarChart, Bar, XAxis, YAxis,
-  LineChart, Line,LabelList
+  LineChart,LabelList
 } from "recharts";
 import Sidebar from "../components/Sidebar";
 import "../App.css";
