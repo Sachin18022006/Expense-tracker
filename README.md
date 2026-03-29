@@ -54,31 +54,17 @@ It allows users to manage income and expenses, analyze spending patterns, and ma
 git clone https://github.com/Sachin18022006/Expense-tracker.git
 cd Expense-tracker
 
+Backend setup:
 cd backend
 npm install
 
+create a .env file :
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-npm start
 
+
+Frontend setup:
 cd frontend
 npm install
 npm start
 
-### 📌 API Endpoints
-Auth Routes
-POST /api/auth/register
-POST /api/auth/login
-POST /api/auth/forgot-password
-POST /api/auth/reset-password/:token
-Expense Routes
-GET /api/expenses
-POST /api/expenses
-DELETE /api/expenses/:id
-
-🧠 Key Learnings
-Implemented full-stack authentication using JWT
-Integrated frontend with backend APIs using Axios
-Visualized data using charts (Recharts)
-Handled real-world deployment issues (CORS, environment variables)
-Built a responsive and user-friendly UI
