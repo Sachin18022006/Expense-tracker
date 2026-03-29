@@ -52,16 +52,16 @@ Clone the repository:
 
 Auth Routes:
 
-POST /api/auth/register  
-POST /api/auth/login  
-POST /api/auth/forgot-password  
-POST /api/auth/reset-password/:token  
+- POST /api/auth/register  
+- POST /api/auth/login  
+- POST /api/auth/forgot-password  
+- POST /api/auth/reset-password/:token  
 
 Expense Routes:
 
-GET /api/expenses  
-POST /api/expenses  
-DELETE /api/expenses/:id  
+- GET /api/expenses  
+- POST /api/expenses  
+- DELETE /api/expenses/:id  
 
 🧠 Key Learnings:
 - Implemented secure authentication using JWT and Bcrypt
@@ -71,7 +71,7 @@ DELETE /api/expenses/:id
 - Designed a real-world responsive UI/UX
 
 📬 Contact:
-Sachin BS  
-GitHub: https://github.com/Sachin18022006  
+-Sachin BS  
+-GitHub: https://github.com/Sachin18022006  
 
 ⭐ If you like this project, give it a star!
