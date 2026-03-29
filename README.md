@@ -26,7 +26,7 @@ git clone https://github.com/Sachin18022006/Expense-tracker.git
 cd Expense-tracker
 
 Backend setup:
-cd backend
+cd backend,
 npm install
 
 Create a .env file in backend folder and add:
@@ -37,18 +37,20 @@ Run backend:
 npm start
 
 Frontend setup:
-cd frontend
-npm install
+cd frontend,
+npm install,
 npm start
 
 📌 API Endpoints:
 Auth Routes:
+
 POST /api/auth/register  
 POST /api/auth/login  
 POST /api/auth/forgot-password  
 POST /api/auth/reset-password/:token  
 
 Expense Routes:
+
 GET /api/expenses  
 POST /api/expenses  
 DELETE /api/expenses/:id  
