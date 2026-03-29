@@ -30,23 +30,23 @@ Clone the repository:
 
 ⚙️ Backend setup:
 
-cd backend,
-npm install
+- cd backend
+- npm install
 
 ⚙️ Create a .env file in backend folder and add:
 
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+- MONGO_URI=your_mongodb_connection_string
+- JWT_SECRET=your_secret_key
 
 ⚙️ Run backend:
 
-npm start
+- npm start
 
 ⚙️ Frontend setup:
 
-cd frontend,
-npm install,
-npm start
+- cd frontend
+- npm install
+- npm start
 
 📌 API Endpoints:
 
