@@ -115,7 +115,14 @@ function Analytics({ month, setMonth }) {
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip  />
+              <Tooltip
+                formatter={(value, name) => [`₹${value}`, name]}
+                contentStyle={{
+                  backgroundColor: "#1e1b4b",
+                  border: "none",
+                  color: "white"
+                }}
+              />
             </PieChart>
           </div>
 
@@ -150,7 +157,14 @@ function Analytics({ month, setMonth }) {
           <LineChart width={700} height={300} data={data}>
             <XAxis dataKey="name" />
             <YAxis />
-            <Tooltip />
+            <Tooltip
+                formatter={(value, name) => [`₹${value}`, name]}
+                contentStyle={{
+                  backgroundColor: "#1e1b4b",
+                  border: "none",
+                  color: "white"
+                }}
+              />
             <Line
               type="monotone"
               dataKey="amount"
