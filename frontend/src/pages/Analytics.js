@@ -9,6 +9,7 @@ import Sidebar from "../components/Sidebar";
 import "../App.css";
 
 const COLORS = ["#6366f1", "#22c55e", "#f59e0b", "#ef4444"];
+const [open, setOpen] = useState(true);
 
 function Analytics({ month, setMonth }) {
   const [expenses, setExpenses] = useState([]);
@@ -71,14 +72,22 @@ function Analytics({ month, setMonth }) {
   return (
     <div className="dashboard-layout">
 
-      <Sidebar
-        month={month}
-        setMonth={setMonth}
-        onLogout={() => {
-          localStorage.removeItem("token");
-          window.location = "/";
-        }}
-      />
+      {open && (
+          <Sidebar
+            month={month}
+            setMonth={setMonth}
+            onLogout={() => {
+              localStorage.removeItem("token");
+              window.location = "/";
+            }}
+          />
+      )}
+
+      <div className={open ? "main-content" : "main-content full"}>
+
+        <button className="floating-toggle" onClick={() => setOpen(!open)}>
+          {open ? "⬅" : "➡"}
+        </button>
 
       <div className="main-content">
 
@@ -153,6 +162,7 @@ function Analytics({ month, setMonth }) {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }
