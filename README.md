@@ -5,6 +5,7 @@ Smart Expense Tracker is a full-stack web application built using the MERN stack
 🚀 Live Demo: https://expense-tracker-fawn-seven-45.vercel.app/
 
 🛠️ Tech Stack:
+
 Frontend: React.js, Axios, Recharts, React Router, CSS  
 Backend: Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt  
 Deployment: Vercel (Frontend), Render (Backend)
