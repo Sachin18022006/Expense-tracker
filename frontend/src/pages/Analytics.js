@@ -123,7 +123,7 @@ function Analytics({ month, setMonth }) {
               <XAxis
                 dataKey="name"
                 interval={0}
-                angle={-20}
+                angle={-10}
                 textAnchor="end"
               />
               <YAxis />
