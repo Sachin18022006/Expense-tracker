@@ -207,9 +207,11 @@ function Dashboard() {
 
         {/* LIST */}
         {filteredExpenses.length === 0 ? (
+          <div className="empty-wrapper">
           <div className="empty-state">
             <h3>🚀 No expenses yet</h3>
             <p>Start by adding your first income or expense 💰</p>
+          </div>
           </div>
         ) : (     
         filteredExpenses.map((e) => (

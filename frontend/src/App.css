@@ -346,22 +346,19 @@ span{
   color: white;
   font-weight: bold;
   };
+.empty-wrapper {
+  height: calc(100vh - 200px); /* adjust based on your header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .empty-state {
-  height: 60vh;              /* takes vertical space */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* vertical center */
-  align-items: center;      /* horizontal center */
   text-align: center;
-
-  border-radius: 12px;
-  background: rgba(255,255,255,0.05);
   color: #ccc;
 }
 
 .empty-state h3 {
-  margin-bottom: 10px;
   color: white;
-  font-size: 22px;
+  margin-bottom: 10px;
 }
