@@ -65,6 +65,7 @@ body {
   margin-top: 15px;
   cursor: pointer;
   color: #ccc;
+  text-align: center;
 }
 
 /* ===================== LOGIN ===================== */
@@ -335,4 +336,8 @@ body {
 .head {
   color: white;
   margin-top:20px;
+}
+.forget{
+  color: white;
+  margin-top:10px;
 }
