@@ -206,7 +206,13 @@ function Dashboard() {
         </div>
 
         {/* LIST */}
-        {filteredExpenses.map((e) => (
+        {filteredExpenses.length === 0 ? (
+          <div className="empty-state">
+            <h3>🚀 No expenses yet</h3>
+            <p>Start by adding your first income or expense 💰</p>
+          </div>
+        ) : (     
+        filteredExpenses.map((e) => (
           <div className="expense-card" key={e._id}>
 
             <div>
@@ -228,7 +234,8 @@ function Dashboard() {
             </div>
 
           </div>
-        ))}
+        ))
+      )}
 
       </div>
     </div>
