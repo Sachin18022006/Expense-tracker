@@ -60,14 +60,13 @@ function Analytics({ month, setMonth }) {
 
   filteredExpenses.forEach((e) => {
     const cat = e.category || "Other";
-    categoryMap[cat] =
-  (categoryMap[cat] || 0) + (Number(e.amount) || 0);
+    categoryMap[cat] = (categoryMap[cat] || 0) + Number(e.amount);
   });
 
   const data = Object.keys(categoryMap).map((key) => ({
-  name: key,
-  amount: Number(categoryMap[key]) || 0,
-}));
+    name: key,
+    amount: categoryMap[key],
+  }));
 
   return (
     <div className="dashboard-layout">
@@ -111,16 +110,13 @@ function Analytics({ month, setMonth }) {
           <div className="chart-card">
             <h3>Category Split</h3>
             <PieChart width={250} height={250}>
-              <Pie data={data} dataKey="amount" nameKey="name"
-                  outerRadius={90}
-                  innerRadius={50}
-                  paddingAngle={3}>
+              <Pie data={data} dataKey="amount" outerRadius={90}>
                 {data.map((_, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
-              </Pie>  
-              <Tooltip formatter={(value) => `₹${value}`} />
-              </PieChart>
+              </Pie>
+              <Tooltip  />
+            </PieChart>
           </div>
 
           {/* BAR */}
