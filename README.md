@@ -1,5 +1,7 @@
 # 💰 Smart Expense Tracker
 
+A modern full-stack expense management application built using MERN stack.
+
 Smart Expense Tracker is a full-stack web application built using the MERN stack that helps users manage their income and expenses efficiently. Users can register, log in securely, add and track expenses, visualize spending through charts, filter data by month, export data as CSV, and reset passwords when needed. The application provides a clean and modern UI along with real-world functionality like authentication, analytics, and deployment.
 
 🚀 Live Demo: https://expense-tracker-fawn-seven-45.vercel.app/
@@ -40,8 +42,8 @@ Clone the repository:
 
 ⚙️ Run backend:
 
-- npx nodemon server.js
-- npm start
+- npx nodemon server.js(for Development)
+- npm start(for Production)
 
 ⚙️ Frontend setup:
 
