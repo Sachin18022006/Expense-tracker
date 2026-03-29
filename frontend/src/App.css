@@ -320,7 +320,7 @@ body {
 /* Toggle button inside sidebar edge */
 .floating-toggle {
   position: fixed;
-  top: 50%;
+  top: 80%;
   left: 220px; /* same as sidebar width */
   transform: translateY(-50%);
   
