@@ -107,7 +107,7 @@ function Analytics({ month, setMonth }) {
           <div className="chart-card">
             <h3>Category Split</h3>
             <PieChart width={250} height={250}>
-              <Pie data={data} dataKey="amount" outerRadius={90}>
+              <Pie data={data} dataKey="amount" outerRadius={110}>
                 {data.map((_, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
@@ -123,7 +123,7 @@ function Analytics({ month, setMonth }) {
               <XAxis
                 dataKey="name"
                 interval={0}
-                angle={-15}
+                angle={-25}
                 textAnchor="end"
               />
               <YAxis />
