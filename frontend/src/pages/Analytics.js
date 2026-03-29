@@ -119,7 +119,7 @@ function Analytics({ month, setMonth }) {
           {/* BAR */}
           <div className="chart-card">
             <h3>Category Comparison</h3>
-            <BarChart width={500} height={300} data={data}>
+            <BarChart width={550} height={300} data={data}>
               <XAxis
                 dataKey="name"
                 interval={0}
