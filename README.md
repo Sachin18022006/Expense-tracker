@@ -47,6 +47,25 @@ It allows users to manage income and expenses, analyze spending patterns, and ma
 
 ---
 
+
+### 📌 API Endpoints
+Auth Routes
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/forgot-password
+POST /api/auth/reset-password/:token
+Expense Routes
+GET /api/expenses
+POST /api/expenses
+DELETE /api/expenses/:id
+
+🧠 Key Learnings
+Implemented full-stack authentication using JWT
+Integrated frontend with backend APIs using Axios
+Visualized data using charts (Recharts)
+Handled real-world deployment issues (CORS, environment variables)
+Built a responsive and user-friendly UI
+
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone Repository
@@ -67,4 +86,3 @@ Frontend setup:
 cd frontend
 npm install
 npm start
-
