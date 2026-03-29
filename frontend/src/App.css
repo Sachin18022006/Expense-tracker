@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgb(11, 11, 63);
+  text-align: center;
 }
 
 .auth-box,
