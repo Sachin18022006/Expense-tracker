@@ -85,9 +85,9 @@ function Analytics({ month, setMonth }) {
 
         {/* SUMMARY */}
         <div className="summary-cards">
-          <div className="card income">💰 ₹{income}</div>
-          <div className="card expense">💸 ₹{expense}</div>
-          <div className="card balance">🧮 ₹{balance}</div>
+          <div className="card income">💰 ₹{income} Income</div>
+          <div className="card expense">💸 ₹{expense} Expense</div>
+          <div className="card balance">🧮 ₹{balance} Balance</div>
         </div>
 
         {/* CHART GRID */}
