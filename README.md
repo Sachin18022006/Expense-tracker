@@ -42,8 +42,8 @@ Clone the repository:
 
 ⚙️ Run backend:
 
-- npx nodemon server.js(for Development)
-- npm start(for Production)
+- npx nodemon server.js  (for Development)
+- npm start  (for Production)
 
 ⚙️ Frontend setup:
 
