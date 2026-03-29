@@ -40,6 +40,7 @@ Clone the repository:
 
 ⚙️ Run backend:
 
+- npx nodemon server.js
 - npm start
 
 ⚙️ Frontend setup:
@@ -72,7 +73,7 @@ Expense Routes:
 
 📬 Contact:
 
--Sachin BS  
--GitHub: https://github.com/Sachin18022006  
+ Sachin BS  
+ GitHub: https://github.com/Sachin18022006  
 
 ⭐ If you like this project, give it a star!
