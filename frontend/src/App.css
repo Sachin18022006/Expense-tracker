@@ -148,6 +148,7 @@ body {
 /* ===================== LAYOUT ===================== */
 .dashboard-layout {
   display: flex;
+   background-color: rgb(11, 11, 63);
 }
 
 .main-content {
@@ -164,7 +165,7 @@ body {
 .sidebar {
   width: 220px;
   height: 100vh;
-  background: #1e293b;
+   background-color: rgb(11, 11, 63);
   color: white;
   padding: 20px;
   display: flex;
@@ -293,6 +294,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+   background-color: rgb(11, 11, 63);
 }
 
 .chart-card {
