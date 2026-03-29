@@ -115,8 +115,10 @@ function Analytics({ month, setMonth }) {
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip />
-            </PieChart>
+              <Tooltip  
+                  formatter={(value, name) => [`₹${value}`, name]}
+                />
+              </PieChart>
           </div>
 
           {/* BAR */}
