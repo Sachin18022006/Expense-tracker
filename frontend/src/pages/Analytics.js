@@ -3,7 +3,7 @@ import axios from "axios";
 import {
   PieChart, Pie, Tooltip, Cell,
   BarChart, Bar, XAxis, YAxis,
-  LineChart, Line
+  LineChart, Line,LabelList
 } from "recharts";
 import Sidebar from "../components/Sidebar";
 import "../App.css";
@@ -97,12 +97,21 @@ function Analytics({ month, setMonth }) {
           <div className="chart-card">
             <h3>Category Split</h3>
             <PieChart width={250} height={250}>
-              <Pie data={data} dataKey="amount" outerRadius={90}>
-                {data.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
+              <Pie
+                data={data}
+                dataKey="amount"
+                outerRadius={90}
+                label={({ name, percent }) =>
+                  `${name} ${(percent * 100).toFixed(0)}%`
+                }
+              />
+              <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#1e1b4b",
+                    border: "none",
+                    color: "white"
+                  }}
+                />
             </PieChart>
           </div>
 
@@ -115,10 +124,21 @@ function Analytics({ month, setMonth }) {
                 interval={0}
                 angle={-10}
                 textAnchor="end"
+                stroke="#ccc"
               />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="amount" fill="#6366f1" />
+              <YAxis stroke="#ccc" />
+
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#1e1b4b",
+                  border: "none",
+                  color: "white"
+                }}
+              />
+
+              <Bar dataKey="amount" fill="#6366f1">
+                <LabelList dataKey="amount" position="top" />
+              </Bar>
             </BarChart>
           </div>
 
@@ -128,15 +148,16 @@ function Analytics({ month, setMonth }) {
         <div className="chart-card full">
           <h3>📈 Expense Trend</h3>
           <LineChart width={700} height={300} data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Line
-              type="monotone"
-              dataKey="amount"
-              stroke="#22c55e"
-              strokeWidth={3}
-            />
+            <XAxis dataKey="name" stroke="#ccc" />
+              <YAxis stroke="#ccc" />
+
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#1e1b4b",
+                  border: "none",
+                  color: "white"
+                }}
+              />
           </LineChart>
         </div>
 
