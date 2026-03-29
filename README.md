@@ -25,9 +25,8 @@ Deployment: Vercel (Frontend), Render (Backend)
 
 Clone the repository:
 
-git clone https://github.com/Sachin18022006/Expense-tracker.git
-
-cd Expense-tracker
+- git clone https://github.com/Sachin18022006/Expense-tracker.git
+- cd Expense-tracker
 
 ⚙️ Backend setup:
 
