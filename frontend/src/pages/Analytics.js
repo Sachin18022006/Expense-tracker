@@ -130,7 +130,14 @@ function Analytics({ month, setMonth }) {
                 textAnchor="end"
               />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                formatter={(value, name) => [`₹${value}`, name]}
+                contentStyle={{
+                  backgroundColor: "#1e1b4b",
+                  border: "none",
+                  color: "white"
+                }}
+              />
               <Bar dataKey="amount" fill="#6366f1" />
             </BarChart>
           </div>
